@@ -159,6 +159,7 @@ function! s:create_dictionary(lhs,rhs,opts)
   for [lhs,rhs] in items(expanded)
     if get(a:opts,'case',1)
       let dictionary[s:mixedcase(lhs)] = s:mixedcase(rhs)
+      let dictionary[s:camelcase(lhs)] = s:camelcase(rhs)
       let dictionary[tolower(lhs)] = tolower(rhs)
       let dictionary[toupper(lhs)] = toupper(rhs)
     endif
